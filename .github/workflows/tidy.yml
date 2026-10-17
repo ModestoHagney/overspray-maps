@@ -1,0 +1,24 @@
+name: Tidy file names
+# Browsers save repeat downloads as "car (2).json". After a merge, move any such file onto the car's own file.
+on:
+  push:
+    branches: [main]
+    paths: ['cars/**']
+permissions:
+  contents: write
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          shopt -s nullglob
+          for f in cars/*\ \(*\).json; do
+            to=$(echo "$f" | sed -E 's/ *\([0-9]+\)\.json$/.json/')
+            [ "$f" != "$to" ] && git mv -f "$f" "$to" && echo "$f -> $to"
+          done
+          git diff --cached --quiet && exit 0
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git commit -m "Move (n) copies onto the car's own file"
+          git push
