@@ -3,13 +3,13 @@
   "car": "Pro2 Stadium Truck",
   "regions": [
     {
-      "id": "piece_1",
-      "name": "Panel 1",
+      "id": "side_left",
+      "name": "side_left",
       "x": 49,
       "y": 251,
       "w": 1499,
       "h": 567,
-      "mirror": "piece_2",
+      "mirror": "side_right",
       "points": [
         {
           "x": 728,
@@ -235,13 +235,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_2",
-      "name": "Panel 2",
+      "id": "side_right",
+      "name": "side_right",
       "x": 49,
       "y": 1475,
       "w": 1499,
       "h": 566,
-      "mirror": "piece_1",
+      "mirror": "side_left",
       "points": [
         {
           "x": 1065,
@@ -444,7 +444,7 @@
     },
     {
       "id": "piece_3",
-      "name": "Panel 3",
+      "name": "panel_3",
       "x": 1357,
       "y": 710,
       "w": 686,
@@ -696,7 +696,7 @@
     },
     {
       "id": "roof",
-      "name": "Roof",
+      "name": "roof",
       "x": 797,
       "y": 816,
       "w": 442,
@@ -771,8 +771,8 @@
       ]
     },
     {
-      "id": "piece_5",
-      "name": "Panel 5",
+      "id": "fan_shroud",
+      "name": "fan_shroud",
       "x": 7,
       "y": 9,
       "w": 384,
@@ -813,8 +813,8 @@
       ]
     },
     {
-      "id": "piece_6",
-      "name": "Panel 6",
+      "id": "front_lip",
+      "name": "front_lip",
       "x": 703,
       "y": 643,
       "w": 79,
@@ -848,7 +848,7 @@
     },
     {
       "id": "piece_7",
-      "name": "Panel 7",
+      "name": "panel_7",
       "x": 578,
       "y": 587,
       "w": 116,
@@ -992,7 +992,7 @@
     },
     {
       "id": "piece_8",
-      "name": "Panel 8",
+      "name": "panel_8",
       "x": 1816,
       "y": 1678,
       "w": 214,
@@ -1017,12 +1017,13 @@
       ]
     },
     {
-      "id": "piece_9",
-      "name": "Panel 9",
+      "id": "number_left",
+      "name": "number_left",
       "x": 163,
       "y": 1468,
       "w": 412,
       "h": 236,
+      "mirror": "number_right",
       "points": [
         {
           "x": 575,
@@ -1072,15 +1073,17 @@
           "x": 368,
           "y": 1516
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
-      "id": "piece_10",
-      "name": "Panel 10",
+      "id": "inner_number_right",
+      "name": "inner_number_right",
       "x": 95,
       "y": 1258,
       "w": 413,
       "h": 235,
+      "mirror": "inner_number_left",
       "points": [
         {
           "x": 98,
@@ -1138,15 +1141,17 @@
           "x": 95,
           "y": 1258
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
-      "id": "piece_11",
-      "name": "Panel 11",
+      "id": "number_right",
+      "name": "number_right",
       "x": 165,
       "y": 589,
       "w": 411,
       "h": 235,
+      "mirror": "number_left",
       "points": [
         {
           "x": 539,
@@ -1184,15 +1189,17 @@
           "x": 367,
           "y": 662
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
-      "id": "piece_12",
-      "name": "Panel 12",
+      "id": "inner_number_left",
+      "name": "inner_number_left",
       "x": 95,
       "y": 800,
       "w": 412,
       "h": 234,
+      "mirror": "inner_number_right",
       "points": [
         {
           "x": 134,
@@ -1238,11 +1245,12 @@
           "x": 129,
           "y": 816
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
       "id": "piece_13",
-      "name": "Panel 13",
+      "name": "panel_13",
       "x": 1248,
       "y": 804,
       "w": 106,
@@ -1330,7 +1338,7 @@
     },
     {
       "id": "piece_14",
-      "name": "Panel 14",
+      "name": "panel_14",
       "x": 340,
       "y": 1831,
       "w": 305,
@@ -1364,7 +1372,7 @@
     },
     {
       "id": "piece_15",
-      "name": "Panel 15",
+      "name": "panel_15",
       "x": 666,
       "y": 13,
       "w": 267,
@@ -1413,8 +1421,8 @@
       ]
     },
     {
-      "id": "piece_16",
-      "name": "Panel 16",
+      "id": "dash_cover_top",
+      "name": "dash_cover_top",
       "x": 1565,
       "y": 1823,
       "w": 222,
@@ -1443,8 +1451,8 @@
       ]
     },
     {
-      "id": "piece_17",
-      "name": "Panel 17",
+      "id": "grille",
+      "name": "grille",
       "x": 519,
       "y": 881,
       "w": 80,
@@ -1534,11 +1542,12 @@
     },
     {
       "id": "piece_18",
-      "name": "Panel 18",
+      "name": "panel_18",
       "x": 933,
       "y": 89,
       "w": 346,
       "h": 151,
+      "mirror": "piece_19",
       "points": [
         {
           "x": 1279,
@@ -1560,15 +1569,17 @@
           "x": 1169,
           "y": 100
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
       "id": "piece_19",
-      "name": "Panel 19",
+      "name": "panel_19",
       "x": 1690,
       "y": 491,
       "w": 346,
       "h": 151,
+      "mirror": "piece_18",
       "points": [
         {
           "x": 1817,
@@ -1594,15 +1605,17 @@
           "x": 1690,
           "y": 491
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
-      "id": "piece_20",
-      "name": "Panel 20",
+      "id": "inner_lip_left",
+      "name": "inner_lip_left",
       "x": 1550,
       "y": 321,
       "w": 491,
       "h": 71,
+      "mirror": "inner_lip_right",
       "points": [
         {
           "x": 2041,
@@ -1620,15 +1633,17 @@
           "x": 1550,
           "y": 321
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
-      "id": "piece_21",
-      "name": "Panel 21",
+      "id": "inner_lip_right",
+      "name": "inner_lip_right",
       "x": 1550,
       "y": 399,
       "w": 491,
       "h": 71,
+      "mirror": "inner_lip_left",
       "points": [
         {
           "x": 2041,
@@ -1646,16 +1661,17 @@
           "x": 1550,
           "y": 399
         }
-      ]
+      ],
+      "mirrorKind": "flipV"
     },
     {
-      "id": "piece_22",
-      "name": "Panel 22",
+      "id": "fender_left",
+      "name": "fender_left",
       "x": 1422,
       "y": 1581,
       "w": 454,
       "h": 80,
-      "mirror": "piece_23",
+      "mirror": "fender_right",
       "points": [
         {
           "x": 1864,
@@ -1705,13 +1721,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_23",
-      "name": "Panel 23",
+      "id": "fender_right",
+      "name": "fender_right",
       "x": 1423,
       "y": 631,
       "w": 453,
       "h": 81,
-      "mirror": "piece_22",
+      "mirror": "fender_left",
       "points": [
         {
           "x": 1462,
@@ -1769,13 +1785,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_24",
-      "name": "Panel 24",
+      "id": "bed_top_left",
+      "name": "bed_top_left",
       "x": 1261,
       "y": 145,
       "w": 778,
       "h": 84,
-      "mirror": "piece_25",
+      "mirror": "bed_top_right",
       "points": [
         {
           "x": 1747,
@@ -1849,13 +1865,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_25",
-      "name": "Panel 25",
+      "id": "bed_top_right",
+      "name": "bed_top_right",
       "x": 1261,
       "y": 8,
       "w": 778,
       "h": 85,
-      "mirror": "piece_24",
+      "mirror": "bed_top_left",
       "points": [
         {
           "x": 1997,
@@ -1933,8 +1949,8 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_26",
-      "name": "Panel 26",
+      "id": "inner_cab_left",
+      "name": "inner_cab_left",
       "x": 481,
       "y": 224,
       "w": 175,
@@ -1983,13 +1999,13 @@
       ]
     },
     {
-      "id": "piece_27",
-      "name": "Panel 27",
+      "id": "mudflap_left",
+      "name": "mudflap_left",
       "x": 1014,
       "y": 599,
       "w": 181,
       "h": 143,
-      "mirror": "piece_28",
+      "mirror": "mudflap_right",
       "points": [
         {
           "x": 1105,
@@ -2015,13 +2031,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_28",
-      "name": "Panel 28",
+      "id": "mudflap_right",
+      "name": "mudflap_right",
       "x": 1013,
       "y": 1550,
       "w": 179,
       "h": 143,
-      "mirror": "piece_27",
+      "mirror": "mudflap_left",
       "points": [
         {
           "x": 1192,
@@ -2043,8 +2059,8 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_29",
-      "name": "Panel 29",
+      "id": "dash_cover_left",
+      "name": "dash_cover_left",
       "x": 1605,
       "y": 1701,
       "w": 187,
@@ -2113,8 +2129,8 @@
       ]
     },
     {
-      "id": "piece_30",
-      "name": "Panel 30",
+      "id": "inner_cab_right",
+      "name": "inner_cab_right",
       "x": 430,
       "y": 17,
       "w": 172,
@@ -2203,8 +2219,8 @@
       ]
     },
     {
-      "id": "piece_31",
-      "name": "Panel 31",
+      "id": "number_rear",
+      "name": "number_rear",
       "x": 23,
       "y": 608,
       "w": 119,
@@ -2230,7 +2246,7 @@
     },
     {
       "id": "piece_32",
-      "name": "Panel 32",
+      "name": "panel_32",
       "x": 400,
       "y": 226,
       "w": 60,
@@ -2263,8 +2279,8 @@
       ]
     },
     {
-      "id": "piece_33",
-      "name": "Panel 33",
+      "id": "diff_cover_front",
+      "name": "diff_cover_front",
       "x": 328,
       "y": 307,
       "w": 75,
@@ -2297,13 +2313,13 @@
       ]
     },
     {
-      "id": "piece_34",
-      "name": "Panel 34",
+      "id": "bed_end_left",
+      "name": "bed_end_left",
       "x": 6,
       "y": 1696,
       "w": 40,
       "h": 191,
-      "mirror": "piece_35",
+      "mirror": "bed_end_right",
       "points": [
         {
           "x": 15,
@@ -2333,13 +2349,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_35",
-      "name": "Panel 35",
+      "id": "bed_end_right",
+      "name": "bed_end_right",
       "x": 7,
       "y": 406,
       "w": 39,
       "h": 190,
-      "mirror": "piece_34",
+      "mirror": "bed_end_left",
       "points": [
         {
           "x": 46,
@@ -2361,8 +2377,8 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_36",
-      "name": "Panel 36",
+      "id": "panel_washers",
+      "name": "panel_washers",
       "x": 172,
       "y": 1054,
       "w": 91,
@@ -2435,13 +2451,13 @@
       ]
     },
     {
-      "id": "piece_37",
-      "name": "Panel 37",
+      "id": "headlight_left",
+      "name": "headlight_left",
       "x": 1511,
       "y": 576,
       "w": 174,
       "h": 39,
-      "mirror": "piece_38",
+      "mirror": "headlight_right",
       "points": [
         {
           "x": 1654,
@@ -2483,13 +2499,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_38",
-      "name": "Panel 38",
+      "id": "headlight_right",
+      "name": "headlight_right",
       "x": 1511,
       "y": 1678,
       "w": 174,
       "h": 38,
-      "mirror": "piece_37",
+      "mirror": "headlight_left",
       "points": [
         {
           "x": 1685,
@@ -2524,7 +2540,7 @@
     },
     {
       "id": "piece_39",
-      "name": "Panel 39",
+      "name": "panel_39",
       "x": 86,
       "y": 1058,
       "w": 80,
@@ -2590,11 +2606,12 @@
     },
     {
       "id": "piece_40",
-      "name": "Panel 40",
+      "name": "panel_40",
       "x": 105,
       "y": 1186,
       "w": 55,
       "h": 56,
+      "mirror": "piece_41",
       "points": [
         {
           "x": 160,
@@ -2612,15 +2629,17 @@
           "x": 105,
           "y": 1186
         }
-      ]
+      ],
+      "mirrorKind": "flip"
     },
     {
       "id": "piece_41",
-      "name": "Panel 41",
+      "name": "panel_41",
       "x": 194,
       "y": 1165,
       "w": 54,
       "h": 57,
+      "mirror": "piece_40",
       "points": [
         {
           "x": 248,
@@ -2638,16 +2657,17 @@
           "x": 194,
           "y": 1165
         }
-      ]
+      ],
+      "mirrorKind": "flip"
     },
     {
-      "id": "piece_42",
-      "name": "Panel 42",
+      "id": "eyebrow_left",
+      "name": "eyebrow_left",
       "x": 1907,
       "y": 735,
       "w": 107,
       "h": 178,
-      "mirror": "piece_43",
+      "mirror": "eyebrow_right",
       "points": [
         {
           "x": 1909,
@@ -2697,13 +2717,13 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_43",
-      "name": "Panel 43",
+      "id": "eyebrow_right",
+      "name": "eyebrow_right",
       "x": 1907,
       "y": 1378,
       "w": 107,
       "h": 180,
-      "mirror": "piece_42",
+      "mirror": "eyebrow_left",
       "points": [
         {
           "x": 2005,
@@ -2753,8 +2773,8 @@
       "mirrorKind": "flipV"
     },
     {
-      "id": "piece_44",
-      "name": "Panel 44",
+      "id": "mudflap_washers",
+      "name": "mudflap_washers",
       "x": 964,
       "y": 9,
       "w": 55,
@@ -2812,7 +2832,7 @@
     },
     {
       "id": "piece_45",
-      "name": "Panel 45",
+      "name": "panel_45",
       "x": 27,
       "y": 1049,
       "w": 8,
@@ -2838,7 +2858,7 @@
     },
     {
       "id": "piece_46",
-      "name": "Panel 46",
+      "name": "panel_46",
       "x": 12,
       "y": 1049,
       "w": 8,
@@ -2864,7 +2884,7 @@
     },
     {
       "id": "piece_47",
-      "name": "Panel 47",
+      "name": "panel_47",
       "x": 51,
       "y": 1066,
       "w": 6,
@@ -2890,7 +2910,7 @@
     },
     {
       "id": "piece_48",
-      "name": "Panel 48",
+      "name": "panel_48",
       "x": 965,
       "y": 74,
       "w": 173,
@@ -2915,8 +2935,8 @@
       ]
     },
     {
-      "id": "piece_49",
-      "name": "Panel 49",
+      "id": "mudflap_bolts_2",
+      "name": "mudflap_bolts",
       "x": 1036,
       "y": 31,
       "w": 23,
@@ -2954,7 +2974,7 @@
     },
     {
       "id": "piece_50",
-      "name": "Panel 50",
+      "name": "panel_50",
       "x": 1037,
       "y": 56,
       "w": 66,

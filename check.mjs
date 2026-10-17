@@ -19,7 +19,10 @@ for (const f of changed) {
   try {
     const text = readFileSync(f, 'utf8');
     if (text.length > 10 * 1024 * 1024) throw new Error('over 10 MB');
-    const map = parseRegionMap(JSON.parse(text));
+    const raw = JSON.parse(text), map = parseRegionMap(raw);
+    // panel names: lowercase letters, digits and _ only (left_door); Overspray saves them that way
+    const badNames = (raw.regions || []).filter(r => !r.kind && !/^[a-z0-9]+(_[a-z0-9]+)*$/.test(r.name || '')).map(r => `"${r.name}"`);
+    if (badNames.length) throw new Error(`panel names need lowercase letters, numbers and _ only (left_door): ${badNames.slice(0, 10).join(', ')}${badNames.length > 10 ? ` and ${badNames.length - 10} more` : ''}`);
     let note = `${map.regions.length} panels, ${(map.links || []).length} links`;
     let old = null;
     try { old = parseRegionMap(JSON.parse(git('show', `${base}:${f}`))); } catch { /* a new car */ }
