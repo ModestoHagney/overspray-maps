@@ -12,22 +12,28 @@ const changed = git('diff', '--name-only', '--diff-filter=AMR', `${base}...HEAD`
 const out = [];
 let bad = 0;
 for (const f of changed) {
-  if (!/^cars\/[a-z0-9_-]+\.json$/.test(f)) {
+  // a browser saving a second copy names it "car (1).json": Review in Overspray saves it over the car's own file
+  const car = f.replace(/\s*\(\d+\)(?=\.json$)/, '');
+  if (!/^cars\/[a-z0-9_-]+\.json$/.test(car)) {
     if (f.startsWith('cars/') && !f.startsWith('cars/.')) { out.push(`❌ ${f}: name it after the iRacing car folder, e.g. cars/porsche992rgt3.json`); bad++; }
     continue;
   }
   try {
     const text = readFileSync(f, 'utf8');
     if (text.length > 10 * 1024 * 1024) throw new Error('over 10 MB');
-    const map = parseRegionMap(JSON.parse(text));
+    const raw = JSON.parse(text), map = parseRegionMap(raw);
+    // panel names: lowercase letters, digits and _ only (left_door); Overspray saves them that way
+    const badNames = (raw.regions || []).filter(r => !r.kind && !/^[a-z0-9]+(_[a-z0-9]+)*$/.test(r.name || '')).map(r => `"${r.name}"`);
+    if (badNames.length) throw new Error(`panel names need lowercase letters, numbers and _ only (left_door): ${badNames.slice(0, 10).join(', ')}${badNames.length > 10 ? ` and ${badNames.length - 10} more` : ''}`);
     let note = `${map.regions.length} panels, ${(map.links || []).length} links`;
     let old = null;
-    try { old = parseRegionMap(JSON.parse(git('show', `${base}:${f}`))); } catch { /* a new car */ }
+    try { old = parseRegionMap(JSON.parse(git('show', `${base}:${car}`))); } catch { /* a new car */ }
     if (!old) note += ', new car';
     else {
       const fit = mapFit ? mapFit(old, map) : null; // older Overspray: no fit check
       if (fit !== null && fit < 0.9) note += `, ⚠️ only ${Math.round(fit * 100)}% of panels line up with the map it replaces: the template may have changed`;
     }
+    if (car !== f) note += `, ⚠️ merge it from Review in Overspray (not on GitHub), which saves it as ${car}`;
     out.push(`✅ ${f}: ${note}`);
   } catch (err) { out.push(`❌ ${f}: ${err.message}`); bad++; }
 }
