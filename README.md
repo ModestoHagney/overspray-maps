@@ -13,4 +13,4 @@ In Overspray: Map › **Share map…**. It saves `<car>.json` and opens this rep
 - Maps hold no template pixels: only outlines traced from the template, names and links.
 
 ## Licence
-Maps sent here are shared under [CC0](https://creativecommons.org/publicdomain/zero/1.0/): anyone may use them for anything.
+Maps are shared under [CC BY-SA 4.0](LICENSE): anyone may use and change them, as long as they credit Overspray maps and share changed maps under the same licence. Maps sent here are shared under the same terms.
