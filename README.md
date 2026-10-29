@@ -12,8 +12,8 @@ In Overspray: Map › **Share map…**. It saves `<car>.json` and opens this rep
 - A map for a car that's already here replaces it. The old one stays in the history.
 - Maps hold no template pixels: only outlines traced from the template, names and links.
 
-## Exclusion Zones
-Where a league's broadcast decals go, so drivers keep their paint clear of them. In Overspray: View › **Exclusion Zone**, then pick the league.
+## Exclusion zones
+Where a league's broadcast decals go, so drivers keep their paint clear of them. In Overspray: View › **Exclusion zone**, then pick the league.
 
 - One file per car, in `zones/<league>/`, named after the car's iRacing paints folder (e.g. `zones/test/stockcars2-arcachevy25.json`).
 - `zones/test/` is a sample for trying it out.
