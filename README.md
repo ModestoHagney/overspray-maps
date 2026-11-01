@@ -17,6 +17,7 @@ Where a league's broadcast decals go, so drivers keep their paint clear of them.
 
 - One file per car, in `zones/<league>/`, named after the car's iRacing paints folder (e.g. `zones/test/stockcars2-arcachevy25.json`).
 - `zones/test/` is a sample for trying it out.
+- To send one: open Overspray with `?zones`, right-click a layer › **Make exclusion zone**, then View › **Submit exclusion zone…**.
 
 ## Licence
 Maps are shared under [CC BY-SA 4.0](LICENSE): anyone may use and change them, as long as they credit Overspray maps and share changed maps under the same licence. Maps sent here are shared under the same terms.

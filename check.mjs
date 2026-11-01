@@ -5,6 +5,7 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync, appendFileSync } from 'node:fs';
 const { parseRegionMap, mapFit } = await import('./overspray/js/regions.js');
+const { parseZone } = await import('./overspray/next/maplib.js').catch(() => ({})); // older Overspray: no exclusion zones
 
 const base = process.argv[2] || 'origin/main';
 const git = (...a) => execFileSync('git', a, { encoding: 'utf8', maxBuffer: 64 << 20, stdio: ['ignore', 'pipe', 'ignore'] });
@@ -14,6 +15,16 @@ let bad = 0;
 for (const f of changed) {
   // a browser saving a second copy names it "car (1).json": Review in Overspray saves it over the car's own file
   const car = f.replace(/\s*\(\d+\)(?=\.json$)/, '');
+  if (f.startsWith('zones/') && !f.startsWith('zones/.') && !f.endsWith('.md')) { // an exclusion zone: zones/<league>/<car folder>.json
+    try {
+      if (!/^zones\/[a-z0-9-]+\/[a-z0-9_-]+\.json$/.test(car)) throw new Error('name it zones/<league>/<iRacing car folder>.json, all lowercase, e.g. zones/my-league/porsche992rgt3.json');
+      const text = readFileSync(f, 'utf8');
+      if (text.length > 2 * 1024 * 1024) throw new Error('over 2 MB');
+      const z = parseZone ? parseZone(text) : { zones: [] };
+      out.push(`✅ ${f}: ${z.zones.length} zone areas${car !== f ? `, ⚠️ merge it from Review in Overspray (not on GitHub), which saves it as ${car}` : ''}`);
+    } catch (err) { out.push(`❌ ${f}: ${err.message}`); bad++; }
+    continue;
+  }
   if (!/^cars\/[a-z0-9_-]+\.json$/.test(car)) {
     if (f.startsWith('cars/') && !f.startsWith('cars/.')) { out.push(`❌ ${f}: name it after the iRacing car folder, e.g. cars/porsche992rgt3.json`); bad++; }
     continue;
@@ -37,7 +48,7 @@ for (const f of changed) {
     out.push(`✅ ${f}: ${note}`);
   } catch (err) { out.push(`❌ ${f}: ${err.message}`); bad++; }
 }
-const text = out.length ? out.join('\n') : 'No car maps changed.';
+const text = out.length ? out.join('\n') : 'No car maps or exclusion zones changed.';
 console.log(text);
 if (process.env.GITHUB_STEP_SUMMARY) appendFileSync(process.env.GITHUB_STEP_SUMMARY, text.replace(/\n/g, '\n\n') + '\n');
 process.exit(bad ? 1 : 0);
